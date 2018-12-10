@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+int a[7]={200,100,50,20,10,5,2};
+int divcoin(int i, int m){
+    if(i==7) return 1;
+    int sum=0;
+    for(int j=0;j<=m/a[i];j++)
+        sum+=divcoin(i+1,m-j*a[i]);
+    return sum;
+}
+int main() {
+    cout<<divcoin(0,200);
+	  return 0;
+}
